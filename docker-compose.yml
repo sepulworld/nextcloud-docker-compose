@@ -24,6 +24,7 @@ services:
     environment:
       - MYSQL_HOST=db
       - REDIS_HOST=redis
+      - REDIS_HOST_PASSWORD=test
       - OVERWRITEPROTOCOL=https
     depends_on:
       - db
