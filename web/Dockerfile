@@ -1,33 +1,3 @@
-[supervisord]
-nodaemon=true
-logfile=/var/log/supervisord/supervisord.log
-pidfile=/var/run/supervisord/supervisord.pid
-childlogdir=/var/log/supervisord/
-logfile_maxbytes=50MB                           ; maximum size of logfile before rotation
-logfile_backups=10                              ; number of backed up logfiles
-loglevel=error
-
-[program:php-fpm]
-stdout_logfile=/dev/stdout
-stdout_logfile_maxbytes=0
-stderr_logfile=/dev/stderr
-stderr_logfile_maxbytes=0
-command=php-fpm
-
-[program:cron]
-stdout_logfile=/dev/stdout
-stdout_logfile_maxbytes=0
-stderr_logfile=/dev/stderr
-stderr_logfile_maxbytes=0
-command=/cron.sh
-cat: ls: No such file or directory
-root@kirkland:~/nextcloud# ls
-app  db.env  docker-compose.yml  web
-root@kirkland:~/nextcloud# cat web/
-Dockerfile  nginx.conf
-root@kirkland:~/nextcloud# cat web/D
-cat: web/D: No such file or directory
-root@kirkland:~/nextcloud# cat web/Dockerfile
 FROM nginx:alpine
 
 COPY nginx.conf /etc/nginx/nginx.conf
