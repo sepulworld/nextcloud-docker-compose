@@ -11,7 +11,7 @@ services:
   redis:
     #image: redis:5.0.10-alpine
     image: redis:alpine
-    command: redis-server --requirepass ${REDIS_HOST_PASSWORD}
+    command: redis-server --requirepass "${REDIS_HOST_PASSWORD}"
     restart: always
 
   app:
